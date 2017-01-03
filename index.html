@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en" ng-app="mosix">
+<head>
+  <meta charset="utf-8">
+
+  <title>MO6</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="MO6">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body ng-controller="mainController">
+  <label class="appTitle">MO6</label>
+
+  <div ng-show="mentions" class="mention" ng-repeat="mention in mentions">
+    <div class="userAvatar">
+      <img  ng-click="openUser(mention.userScreenName)" src="{{mention.userAvatar}}"></img>
+    </div>
+    <div class="userInfo">
+      <label class="name">{{mention.userName}}</label>
+      <label class="screenName">{{mention.userScreenName}}</label>
+    </div>
+    <div class="date">
+      <label>{{mention.date}}</label>
+    </div>
+    <div class="comment">
+      <label>{{mention.text}}</label>
+      <a href="" class="replyLink" ng-click="deployAnswerArea(mention)" ng-show="!mention.answerAreaDeployed">Responder</a>
+    </div>
+    <div class="answerArea" ng-show="mention.answerAreaDeployed">
+      <textarea class="answerAreaTextarea" ng-model="mention.reply"></textarea>
+      <button class="send" ng-click="sendReply(mention)">Enviar</button>
+    </div>
+  </div>
+
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

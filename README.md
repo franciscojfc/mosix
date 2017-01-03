@@ -1,0 +1,3 @@
+"# MOSIX"
+
+npm install# mosix
