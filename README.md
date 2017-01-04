@@ -1,3 +1,3 @@
 "# MOSIX"
 
-npm install# mosix
+npm install mosix
