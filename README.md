@@ -1,4 +1,4 @@
-# "MOSIX"
+# MOSIX
 
 # Instalar los módulos de node necesarios:
 npm install mosix
