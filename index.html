@@ -14,9 +14,9 @@
 <body ng-controller="mainController">
   <label class="appTitle">MO6</label>
 
-  <div ng-show="mentions" class="mention" ng-repeat="mention in mentions">
+  <div ng-show="mentions.length > 0" class="mention" ng-repeat="mention in mentions">
     <div class="userAvatar">
-      <img  ng-click="openUser(mention.userScreenName)" src="{{mention.userAvatar}}"></img>
+      <img class="avatarImage" ng-click="openUser(mention)" src="{{mention.userAvatar}}"></img>
     </div>
     <div class="userInfo">
       <label class="name">{{mention.userName}}</label>

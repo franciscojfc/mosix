@@ -5,6 +5,7 @@ var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
 var twitterConnector = require('./twitterConnector');
+var instagramConnector = require('./instagramConnector');
 
 
 // --------------------------------------------------------
@@ -50,7 +51,11 @@ console.log("Servidor arrancado en puerto " + PORT);
 // Conexión bidireccional con el front
 io.on('connection', function (socket) {
   twitterConnector.setSocket(socket);
+  instagramConnector.setSocket(socket);
 });
 
 // Nos ponemos a escuchar twitter. Las menciones se van a meter en el socket
 twitterConnector.listenTwitter();
+
+// Nos ponemos a escuchar instagram. Las menciones se van a meter en el socket
+instagramConnector.listenInstagram();

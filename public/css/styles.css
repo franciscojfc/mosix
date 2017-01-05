@@ -23,6 +23,9 @@
     cursor: pointer;
 }
 
+.avatarImage {
+    width: 50px;
+}
 .userInfo {
     position:relative;
     float:left;

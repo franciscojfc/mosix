@@ -14,8 +14,8 @@ function mainController($scope) {
         $scope.$apply();
     });
 
-    $scope.openUser = function(userScreenName) {
-        window.open("http://www.twitter.com/" + userScreenName);
+    $scope.openUser = function(mention) {
+        window.open(mention.userUrl);
     }
 
     $scope.deployAnswerArea = function(mention) {
